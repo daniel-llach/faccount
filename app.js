@@ -68,5 +68,7 @@ app.get('/secret', jwtauth, requireAuth, function(req, res){
  */
  var register = require('./lib/register');
  app.post('/register', register, function(req, res){
-   res.status(200).send('darwined login!');
+  //  res.status(200).send('darwined login!');
+  // redirect to app main page
+  res.redirect(303, 'http://localhost:4000/login');
  });
