@@ -19,7 +19,6 @@ app.get('/token', function(req, res){
 	if (req.headers.username && req.headers.password) {
 		var user = req.headers.username;
 		var pass = req.headers.password;
-
 		connection.query('SELECT * FROM `usuarios` WHERE `username` = "' + user + '"' , function(err, userData) {
 				if(!err){
 					if(userData.length == 0){
@@ -28,7 +27,6 @@ app.get('/token', function(req, res){
 						bcrypt.compare(pass, userData[0].password, function(err, response) {
 								if (err) return next(err);
 								if(response){
-									console.log("response: ", response);
 									// user has successfully authenticated, so we can generate and send a token
 									var expires = moment().add('days', 7).valueOf();
 									var token = jwt.encode(

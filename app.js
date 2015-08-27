@@ -18,7 +18,7 @@ var jwtauth = require('./lib/jwtauth');
 app = express();
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", "origin, content-type, accept, username, password");
   next();
 });
 app.use(bodyParser.json());
@@ -35,11 +35,10 @@ app.set('jwtTokenSecret', 'superdarwined')
  * A simple middleware to restrict access to authenticated users.
  */
 var requireAuth = function(req, res, next) {
-  console.log(req.user);
 	if (!req.user) {
 		res.status(401).send('Not authorized');
 	}	else {
-		next()
+		next();
 	}
 }
 
@@ -53,7 +52,7 @@ controllers.set(app)
  * Start listening
  */
 var server = app.listen(5000, function() {
-	console.log('Listening on port %d'.green, server.address().port)
+	console.log('Foris account listening on port %d'.green, server.address().port)
 });
 
 /*
