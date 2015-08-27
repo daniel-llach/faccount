@@ -5,12 +5,14 @@ var jwt = require('jwt-simple');
 var moment = require('moment')
 var bcrypt = require('bcrypt');
 
-var dbconfig = require('./../db/config');
+var config = require('./../config');
+
+// DB connect
 var connection = mysql.createConnection({
- host     : dbconfig.host,
- user     : dbconfig.user,
- password : dbconfig.password,
- database : dbconfig.database
+	host     : config.db_host,
+	user     : config.db_user,
+	password : config.db_password,
+	database : config.db_database
 });
 
 module.exports.set = function(app) {
