@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var colors = require('colors');
 var url = require('url'); // req.body
 var jwt = require('jwt-simple');
+var config = require('./config');
 
 /*
  * THe JWT middleware
@@ -69,5 +70,5 @@ app.get('/secret', jwtauth, requireAuth, function(req, res){
  app.post('/register', register, function(req, res){
   //  res.status(200).send('darwined login!');
   // redirect to app main page
-  res.redirect(303, 'http://localhost:4000/login');
+  res.redirect(303, config.url_daccount + '/login');
  });
