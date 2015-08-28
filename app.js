@@ -52,7 +52,7 @@ controllers.set(app)
 /*
  * Start listening
  */
-var server = app.listen(5000, function() {
+var server = app.listen(80, function() {
 	console.log('Foris account listening on port %d'.green, server.address().port)
 });
 
