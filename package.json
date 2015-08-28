@@ -1,6 +1,6 @@
 {
-  "name": "darwinedLogin",
-  "description": "Account user modelule",
+  "name": "foris account",
+  "description": "Foris account user api",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
