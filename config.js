@@ -1,8 +1,7 @@
 /*
  * Routers
  */
-module.exports.url_agendador = 'agendadorapp.herokuapp.com';
-module.exports.url_daccount = 'daccount.herokuapp.com';
+module.exports.url_daccount = 'https://daccount.herokuapp.com';
 
 /*
  * CONFIG DATABASE
